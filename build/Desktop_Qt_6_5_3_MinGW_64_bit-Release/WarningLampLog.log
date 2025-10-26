@@ -1,0 +1,64 @@
+[2025-10-26 09:32:15.557] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:32:15.757] DEBUG: QmSerial::Flash5S
+[2025-10-26 09:32:15.758] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:32:15.759] DEBUG: QmSerial::FlashLamp5s  ==> "011000030002040004003273ae"
+[2025-10-26 09:32:15.760] WARNING: bool QSerialPort::flush(): device not open
+[2025-10-26 09:32:17.519] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:32:17.519] DEBUG: checkWarning............
+[2025-10-26 09:32:39.166] DEBUG: "222.92.148.149" "wendu" "sa" "kingdee1!"
+[2025-10-26 09:34:20.819] DEBUG: "127.0.0.1" "WenduDB" "sa" ""
+[2025-10-26 09:34:20.887] DEBUG: Good! Connected!
+[2025-10-26 09:34:20.888] DEBUG: Serial port open error! "系统找不到指定的文件。"
+[2025-10-26 09:34:21.005] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:34:21.189] DEBUG: QmSerial::Flash5S
+[2025-10-26 09:34:21.189] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:34:21.191] DEBUG: QmSerial::FlashLamp5s  ==> "011000030002040004003273ae"
+[2025-10-26 09:34:21.191] WARNING: bool QSerialPort::flush(): device not open
+[2025-10-26 09:34:22.890] DEBUG: checkWarning............
+[2025-10-26 09:34:22.890] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:34:24.889] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:34:24.890] DEBUG: checkWarning............
+[2025-10-26 09:35:35.856] DEBUG: "127.0.0.1" "WenduDB" "sa" ""
+[2025-10-26 09:35:35.920] DEBUG: Good! Connected!
+[2025-10-26 09:35:35.921] DEBUG: Serial port open error! "系统找不到指定的文件。"
+[2025-10-26 09:35:36.031] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:35:36.221] DEBUG: QmSerial::Flash5S
+[2025-10-26 09:35:36.222] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:35:36.223] DEBUG: QmSerial::FlashLamp5s  ==> "011000030002040004003273ae"
+[2025-10-26 09:35:36.223] WARNING: bool QSerialPort::flush(): device not open
+[2025-10-26 09:35:37.922] DEBUG: checkWarning............
+[2025-10-26 09:35:37.922] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:35:39.923] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:35:39.923] DEBUG: checkWarning............
+[2025-10-26 09:42:17.780] DEBUG: "127.0.0.1" "WenduDB" "sa" ""
+[2025-10-26 09:42:17.846] DEBUG: Good! Connected!
+[2025-10-26 09:42:17.847] DEBUG: Serial port open error! "系统找不到指定的文件。"
+[2025-10-26 09:42:17.965] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:18.149] DEBUG: QmSerial::Flash5S
+[2025-10-26 09:42:18.151] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:18.152] DEBUG: QmSerial::FlashLamp5s  ==> "011000030002040004003273ae"
+[2025-10-26 09:42:18.155] WARNING: bool QSerialPort::flush(): device not open
+[2025-10-26 09:42:19.849] DEBUG: checkWarning............
+[2025-10-26 09:42:19.850] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:21.848] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:21.849] DEBUG: checkWarning............
+[2025-10-26 09:42:23.848] DEBUG: checkWarning............
+[2025-10-26 09:42:23.850] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:25.854] DEBUG: checkWarning............
+[2025-10-26 09:42:25.858] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:27.851] DEBUG: checkWarning............
+[2025-10-26 09:42:27.852] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:31.864] DEBUG: checkWarning............
+[2025-10-26 09:42:31.868] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:33.860] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:42:33.863] DEBUG: checkWarning............
+[2025-10-26 09:47:00.066] DEBUG: "127.0.0.1" "WenduDB" "sa" ""
+[2025-10-26 09:47:00.126] DEBUG: Good! Connected!
+[2025-10-26 09:47:00.128] DEBUG: Serial port open error! "系统找不到指定的文件。"
+[2025-10-26 09:47:00.236] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:47:00.431] DEBUG: QmSerial::Flash5S
+[2025-10-26 09:47:00.432] WARNING: QIODevice::write (QSerialPort): device not open
+[2025-10-26 09:47:00.433] DEBUG: QmSerial::FlashLamp5s  ==> "011000030002040004003273ae"
+[2025-10-26 09:47:00.433] WARNING: bool QSerialPort::flush(): device not open
+[2025-10-26 09:47:02.129] DEBUG: checkWarning............
+[2025-10-26 09:47:02.130] WARNING: QIODevice::write (QSerialPort): device not open

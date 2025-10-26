@@ -1,0 +1,19 @@
+[database]
+type=mssql
+
+[dbconn]
+name=aaa
+ip=222.92.148.149
+port=31433
+user=hk5678
+password=Winter2012
+db=wendbdb
+warning_term=120  /*120s warning time, 0 is non-stop
+
+[Line1]
+Name=QM1
+COM=6
+
+[Line2]
+Name=QM2
+COM=8
