@@ -39,6 +39,9 @@
       <height>500</height>
      </size>
     </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
    </widget>
    <widget class="QRadioButton" name="chButton">
     <property name="geometry">
@@ -94,7 +97,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>25</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>

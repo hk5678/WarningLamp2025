@@ -47,6 +47,8 @@ void HistoryWin::on_calendarWidget_clicked(const QDate &date)
 {
     aDay=date;
     getDataByDay(aDay);
+    // 假设 tableWidget 是你的 QTableWidget 实例
+    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 
     return;
 

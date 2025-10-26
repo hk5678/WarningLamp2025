@@ -124,27 +124,27 @@ bool TempSensor::checkWarning(QSqlDatabase &db, QString &mainStatus)
 
 void TempSensor::warning()
 {
-    if (m_button) {
-        QString button_style_red = "QPushButton{background-color:red; "
-                                   "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
-        m_button->setStyleSheet(button_style_red);
-    }
+    // if (m_button) {
+    //     QString button_style_red = "QPushButton{background-color:red; "
+    //                                "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
+    //     m_button->setStyleSheet(button_style_red);
+    // }
 }
 
 void TempSensor::online()
 {
-    if (m_button) {
-        QString button_style_green = "QPushButton{background-color:green; "
-                                     "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
-        m_button->setStyleSheet(button_style_green);
-    }
+    // if (m_button) {
+    //     QString button_style_green = "QPushButton{background-color:green; "
+    //                                  "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
+    //     m_button->setStyleSheet(button_style_green);
+    // }
 }
 
 void TempSensor::offline()
 {
-    if (m_button) {
-        QString button_style_gray = "QPushButton{background-color:gray; "
-                                    "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
-        m_button->setStyleSheet(button_style_gray);
-    }
+    // if (m_button) {
+    //     QString button_style_gray = "QPushButton{background-color:gray; "
+    //                                 "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
+    //     m_button->setStyleSheet(button_style_gray);
+    // }
 }
