@@ -5,9 +5,8 @@ TempSensor::TempSensor(QObject *parent) : QObject(parent),
     m_effDt(""),
     m_moduleNo(""),
     m_moduleName(""),
-    // m_physloc(""),
-    m_alarmID(0)
-{
+    cur_overtime(0),
+    m_alarmID(0){
 }
 
 TempSensor::TempSensor(const QString &moduleNo, const QString &moduleName, QObject *parent) :
@@ -16,13 +15,15 @@ TempSensor::TempSensor(const QString &moduleNo, const QString &moduleName, QObje
     m_effDt(""),
     m_moduleNo(moduleNo),
     m_moduleName(moduleName),
-    // m_physloc(""),
+    m_OverTimeWarn(100),
+    cur_overtime(0),
     m_alarmID(0)
 {
 }
 
 
 // Getter 实现
+double TempSensor::OverTimeWarn() const  { return m_OverTimeWarn; }
 QString TempSensor::num()  { return m_num; }
 QString TempSensor::status() const { return m_status; }
 QString TempSensor::effDt() const { return m_effDt; }
@@ -32,6 +33,14 @@ QString TempSensor::moduleName() const { return m_moduleName; }
 int TempSensor::alarmID() const { return m_alarmID; }
 
 // Setter 实现
+void TempSensor::setOverTimeWarn(const int overtime)
+{
+    if(m_OverTimeWarn != overtime) {
+        m_OverTimeWarn = overtime;
+
+    }
+}
+
 void TempSensor::setStatus(const QString &status)
 {
     if(m_status != status) {
@@ -85,6 +94,7 @@ bool TempSensor::checkWarning(QSqlDatabase &db, QString &mainStatus)
     QString str = WarnText.replace('\"', " ").trimmed();
 
     if (str == "回归正常") {
+        cur_overtime=0;
         if (status()== "WARNING"){
             QSqlQuery qu(db);
             qu.prepare("update AlarmBeep set ResetTime=getdate(), ResetMode='REGRESS' where id=?");
@@ -95,6 +105,8 @@ bool TempSensor::checkWarning(QSqlDatabase &db, QString &mainStatus)
             emit statusNormal();
         }
     } else {
+        QString dFormat="yyyy-MM-dd hh:mm:ss.zzz";
+        cur_overtime=cur_overtime+(QDateTime::fromString(m_effDt,dFormat).msecsTo(QDateTime::fromString(m_effDt,dFormat)))/1000.0;
         if (EffDt != m_effDt &&
             (str == "温度越下限" || str == "温度越下下限" ||
              str == "温度越上限" || str == "温度越上上限")) {
@@ -124,27 +136,27 @@ bool TempSensor::checkWarning(QSqlDatabase &db, QString &mainStatus)
 
 void TempSensor::warning()
 {
-    // if (m_button) {
-    //     QString button_style_red = "QPushButton{background-color:red; "
-    //                                "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
-    //     m_button->setStyleSheet(button_style_red);
-    // }
+    if (m_button) {
+        QString button_style_red = "QPushButton{background-color:red; "
+                                   "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
+        m_button->setStyleSheet(button_style_red);
+    }
 }
 
 void TempSensor::online()
 {
-    // if (m_button) {
-    //     QString button_style_green = "QPushButton{background-color:green; "
-    //                                  "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
-    //     m_button->setStyleSheet(button_style_green);
-    // }
+    if (m_button) {
+        QString button_style_green = "QPushButton{background-color:green; "
+                                     "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
+        m_button->setStyleSheet(button_style_green);
+    }
 }
 
 void TempSensor::offline()
 {
-    // if (m_button) {
-    //     QString button_style_gray = "QPushButton{background-color:gray; "
-    //                                 "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
-    //     m_button->setStyleSheet(button_style_gray);
-    // }
+    if (m_button) {
+        QString button_style_gray = "QPushButton{background-color:gray; "
+                                    "color: white; border-radius: 10px; border: 2px groove gray; border-style: outset;}";
+        m_button->setStyleSheet(button_style_gray);
+    }
 }

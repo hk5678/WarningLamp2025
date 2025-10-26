@@ -74,6 +74,8 @@ private slots:
 private:
     Ui::WarningLamp* ui = nullptr;
 
+    int OverTime;
+
     QSqlDatabase m_db;
     TempSensor*  m_hSensor = nullptr;
     TempSensor*  m_mSensor = nullptr;

@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QPushButton>  // Add this include
+#include <QDateTime>
 
 class TempSensor : public QObject
 {
@@ -21,10 +22,12 @@ public:
     QString effDt() const;
     QString moduleNo() const;
     QString moduleName() const;
+    double OverTimeWarn() const;
     // QString physloc() const;
     int alarmID() const;
 
     // Setters
+    void setOverTimeWarn(int overtime);
     void setStatus(const QString &status);
     void setNum(const QString &num);
     void setEffDt(const QString &effDt);
@@ -54,6 +57,8 @@ private:
     QString m_effDt;
     QString m_moduleNo;
     QString m_moduleName;
+    int m_OverTimeWarn;
+    double cur_overtime;
     // QString m_physloc;
     int m_alarmID;
     QPushButton* m_button;  // Add this member

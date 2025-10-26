@@ -100,6 +100,7 @@ void WarningLamp::readSetting()
         return;
     }
 
+    OverTime=settings.value("dbconn/overtime").toInt();
     // DB
     const QString ip       = settings.value("dbconn/ip").toString();
     const QString port     = settings.value("dbconn/port").toString();
@@ -121,10 +122,11 @@ void WarningLamp::readSetting()
     m_hSensor->setModuleNo(settings.value("Line1/HModuleNo").toString());
     m_hSensor->setModuleName("淬火");
     m_hSensor->setNum("DO2");
-
+    m_hSensor->setOverTimeWarn(OverTime);
     m_lSensor->setModuleNo(settings.value("Line1/LModuleNo").toString());
     m_lSensor->setModuleName("回火");
     m_lSensor->setNum("DO3");
+    m_lSensor->setOverTimeWarn(OverTime);
 
     // 如需中温，解开以下
     // m_mSensor->setModuleNo(settings.value("Line1/MModuleNo").toString());
@@ -378,9 +380,12 @@ void WarningLamp::onWarningDetected()
         QString num = senderSensor->num(); //""DO1"(仪表灯) "DO2"（高温）或 "DO3"（低温）
 
         // 立即打开对应 DO
-        QTimer::singleShot(200, this, [this, num](){
-       this->flashLamp(num);
-        });
+        if (senderSensor->OverTimeWarn()>OverTime) {
+            QTimer::singleShot(200, this, [this, num](){
+                this->flashLamp(num);
+            });
+        }
+
 
         QString lampout="DO1";
         QTimer::singleShot(400, this, [this, lampout](){
@@ -433,6 +438,12 @@ void WarningLamp::warning()
 {
     if (ui->btnStart) {
         ui->btnStart->setStyleSheet(kStyleRed);
+    }
+    if (m_hSensor->status()=="WARNING"){
+        m_hSensor->warning();
+    }
+    if (m_lSensor->status()=="WARNING"){
+        m_lSensor->warning();
     }
 }
 
